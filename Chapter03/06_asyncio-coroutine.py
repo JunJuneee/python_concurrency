@@ -8,6 +8,7 @@ async def add_42(number):
 
 async def hello_world():
     print("hello world!")
+    # 코루틴 안에서 다른 코루틴 호출 가능
     result = await add_42(23)
     return result
 

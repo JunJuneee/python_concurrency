@@ -7,7 +7,7 @@ class YellEchoServer(asyncio.Protocol):
     def connection_made(self, transport):
         self.transport = transport
         print("Connection received from:",
-            transport.get_extra_info('peername'))
+              transport.get_extra_info('peername'))
 
     def data_received(self, data):
         self.transport.write(data.upper())
@@ -27,3 +27,6 @@ finally:
     server.close()
     event_loop.run_until_complete(server.wait_closed())
     event_loop.close()
+
+#  nc localhost 1234
+#  hello world!

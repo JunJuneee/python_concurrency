@@ -41,7 +41,8 @@ class PrinterService(cotyledon.Service):
         while True:
             job = self.queue.get(block=True)
             print("I am Worker: %d PID: %d and I print %s"
-                % (self.worker_id, self.pid, job))
+                  % (self.worker_id, self.pid, job))
 
 
-Manager().run()
+if __name__ == '__main__':
+    Manager().run()

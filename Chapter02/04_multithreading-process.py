@@ -10,7 +10,7 @@ def compute(results):
 with multiprocessing.Manager() as manager:
     results = manager.list()
     workers = [multiprocessing.Process(target=compute, args=(results,))
-            for x in range(8)]
+            for x in range(4)]
     for worker in workers:
         worker.start()
     for worker in workers:
